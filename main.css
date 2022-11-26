@@ -1,0 +1,277 @@
+@font-face {
+    font-family: "NeueMontreal-Regular";
+    src: url(assets/fonts/7076b3e465fcc8b64fc2ee8cec6f8e65.woff2);
+}
+
+@font-face {
+    font-family: "NeueMontreal-Bold";
+    src: url(assets/fonts/29bee42d4b1b44701793384796939d33.woff2);
+}
+
+@font-face {
+    font-family: "NeueMontreal-Light";
+    src: url(assets/fonts/850842bad3b473cff5a975789c0b146f.woff2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a:hover,
+a:focus,
+button:hover,
+button:focus {
+    cursor: var(--cursorHover);
+    ;
+}
+
+html,
+body {
+    cursor: var(--cursorPointer);
+    font-family: 'Poppins';
+    color: var(--primary-color);
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
+:root {
+    --primary-color: #E5E5E5;
+    --secondary-color: #0d0d0d;
+    --cursorPointer: url(assets/images/f01b74484a39a4b616c95fd3cd9519db.png), auto;
+    --cursorHover: url(assets/images/02e12dc19a2b09d840d7eb8061a849cf.png), auto;
+    --themeColor: #E5E5E5;
+    --borderColor: white;
+    --clickColor: #FFFFFF;
+}
+
+.light-theme {
+    --primary-color: #0d0d0d;
+    --secondary-color: #E5E5E5;
+    --cursorPointer: url(assets/images/21d35329bee3181f14079ce914b06f04.png), auto;
+    --cursorHover: url(assets/images/79cafcf23bf84e37b6026d8666beedb5.png), auto;
+    --themeColor: #0d0d0d;
+    --borderColor: black;
+    --clickColor: black;
+}
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.container {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.content {
+    display: flex;
+    gap: 5em;
+    width: 100%;
+    padding-top: 3em;
+    position: absolute;
+    top: 350px;
+}
+
+ /*.content {
+    display: flex;
+    gap: 5em;
+    width: 100%;
+    padding-top: 3em;
+    position: relative;
+ */
+
+.content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid;
+    border-color: var(--borderColor);
+    transform: scaleX(1);
+}
+
+h1 {
+    font-size: 4rem;
+    width: 50vw;
+    line-height: 97%;
+    text-align: right;
+}
+
+h1,
+#home {
+    font-family: "NeueMontreal-Regular";
+    flex-basis: 0;
+    flex-grow: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+#info {
+    font-family: "NeueMontreal-Regular";
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+#skills {
+    font-family: "NeueMontreal-Regular";
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+p {
+    font-family: "NeueMontreal-Regular";
+    font-size: 1.3rem;
+    width: 40vw;
+}
+
+h3 {
+    font-family: "NeueMontreal-Light";
+    font-size: 22px;
+}
+
+h2 {
+    font-family: "NeueMontreal-Light";
+    font-size: 40px;
+}
+
+.title {
+    position: absolute;
+    display: grid;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    place-content: top;
+    padding-left: 50px;
+}
+
+.title-content {
+    /*display: flex; 
+    border-left: 1px solid white;
+    border-spacing: 1cm 2em;
+    */
+    gap: 3em;
+    width: 100%;
+    padding-top: 3em;
+    position: relative;
+}
+
+.title-content::before {
+    /*
+    border-left: 1px solid white;
+    border-spacing: 2cm 2em;
+    */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: scaleX(1);
+}
+
+h2,
+h3 {
+    flex-basis: 0;
+    flex-grow: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.nav-link {
+    all: unset;
+}
+
+
+.theme {
+    position: fixed;
+    z-index: 10;
+    color: var(--themeColor);
+    left: 40px;
+    bottom: 50px;
+    transform-origin: left bottom;
+    white-space: nowrap;
+    mix-blend-mode: difference;
+    display: flex;
+    column-gap: 15px;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: white;
+    border: none;
+    padding: 0;
+    font: inherit;
+    outline: inherit;
+    font-family: "NeueMontreal-Regular";
+}
+
+div.clickEffect {
+    position: fixed;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: var(--clickColor);
+    border-radius: 50%;
+    animation: clickEffect 0.4s ease-out;
+    z-index: 99999;
+}
+
+@keyframes clickEffect {
+    0% {
+        opacity: 1;
+        width: 0.5em;
+        height: 0.5em;
+        margin: -0.25em;
+        border-width: 0.5em;
+    }
+
+    100% {
+        opacity: 0.2;
+        width: 15em;
+        height: 15em;
+        margin: -7.5em;
+        border-width: 0.03em;
+    }
+}
+
+.infoText {
+    backdrop-filter: blur(2px);
+}
+
+#content {
+    position: fixed;
+}
+
+@media screen and (max-width: 500px) {
+    .theme {
+        bottom: 100px;
+    }
+    .content {
+        top: 250px;
+    }
+    h1 {
+    font-size: 2.5rem;
+   }
+   h2 {
+    font-size: 1.5rem;
+   }
+   h3 {
+    font-size: 0.9rem;
+   }
+
+    p {
+    font-size: 0.8rem;
+   }
+}
+
+
+
+/*# sourceMappingURL=main.css.map*/
